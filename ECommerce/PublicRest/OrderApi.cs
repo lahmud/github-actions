@@ -20,7 +20,7 @@ namespace ECommerce.PublicRest
             string userId,
             ILogger log)
         {
-            log.LogInformation("C# HTTP trigger function processed a request.");
+            log.LogInformation("Processing order checkout.");
 
             var instanceId = await client.StartNewAsync<string>(nameof(OrderOrchestrator), userId);
             return await client.WaitForCompletionOrCreateCheckStatusResponseAsync(req, instanceId);
