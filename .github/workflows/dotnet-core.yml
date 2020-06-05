@@ -23,3 +23,10 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-restore --verbosity normal
+    - name: Azure Functions Action
+      uses: Azure/functions-action@v1.1.4
+      with:
+        # Name of the Azure Function App
+        app-name: func-app-ltm
+        # Function app slot to be deploy to
+        slot-name: Production # optional
